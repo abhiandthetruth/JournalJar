@@ -3,7 +3,7 @@
   <h2>Topics</h2>
   <ul>
   {% for topic in topics %}
-    <li>{{ topic }}</li>
+    <li><a href = "{% url 'jar:topic' topic.id %}">{{ topic }}</a></li>
   {% empty %}
     <li>No topics have been added yet</li>
   {% endfor %}
