@@ -1,5 +1,14 @@
 {% extends "jar/base.html" %}
+{% block header %}
+<div class='jumbotron'>
+  <h1>Track your learning.</h1>
+</div>
+{% endblock header %}
 {% block content %}
-<p> This is a jar of all the journals which will
-always remain with you</p>
+<h2>
+  <a href="{% url 'users:register' %}"> Register an account</a> to make your own jar of Journals.
+</h2>
+<h2>
+This is a jar of all the journals which will always remain with you. List out the topics and fill it with all the information you have.
+</h2>
 {% endblock content %}
