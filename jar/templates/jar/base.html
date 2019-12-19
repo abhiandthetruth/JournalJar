@@ -2,6 +2,11 @@
   <a href = "{% url 'jar:index' %}">Journal Jar</a>
 </h1>
 <h4>
+  {% if user.is_authenticated %}
+    Hello, {{ user.username }} 
+  {% else %}
+    <a href="{% url 'users:login' %}">log in</a>
+  {% endif %}
   <a href = "{% url 'jar:topics' %}">Topics</a>
 </h4>
 {% block content %}{% endblock content %}
