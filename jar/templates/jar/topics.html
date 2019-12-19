@@ -1,12 +1,14 @@
 {% extends 'jar/base.html' %}
+{% block header %}
+<h2>Topics</h2>
+{% endblock header %}
 {% block content %}
-  <h2>Topics</h2>
   <ul>
   {% for topic in topics %}
-    <li><a href = "{% url 'jar:topic' topic.id %}">{{ topic }}</a></li>
+    <li><h4><a href = "{% url 'jar:topic' topic.id %}">{{ topic }}</h4></a></li>
   {% empty %}
     <li>No topics have been added yet</li>
   {% endfor %}
   </ul>
-  <a href="{% url 'jar:new_topic' %}">Add a new topic:</a>
+  <h4><a href="{% url 'jar:new_topic' %}">Add a new topic:</a></h4>
 {% endblock content %}
