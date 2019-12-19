@@ -1,9 +1,15 @@
 {% extends 'jar/base.html' %}
+{% load bootstrap3 %}
+{% block header %}
+  <h2> Register </h2>
+{% endblock header %}
 {% block content %}
-  <form method="post" action="{% url 'users:register' %}">
+  <form method="post" action="{% url 'users:register' %}" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% bootstrap_form form %}
+    {% buttons %}
     <button namme="submit">register</button>
+    {% endbuttons %}
     <!--<input type="hidden" name="next" value="{% url 'jar:index' %}" />-->
   </form>
 {% endblock content %}
