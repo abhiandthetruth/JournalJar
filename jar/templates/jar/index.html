@@ -6,6 +6,8 @@
 {% endblock header %}
 {% block content %}
 <h2>
+  {% if user.is_authenticated %}
+    <a href="{% url 'users:topics' %}"> Your Topics</a> are waiting for you.
   <a href="{% url 'users:register' %}"> Register an account</a> to make your own jar of Journals.
 </h2>
 <h2>
